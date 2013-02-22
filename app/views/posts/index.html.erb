@@ -1,11 +1,15 @@
+<div class="errors">
+    <%= alert %>
+</div>
+
 <h1>Messages!</h2>
-<%= link_to "New Message", new_post_path %>
+<%= render "form" %>
 <br />
 <br />
 
 <%= div_for @posts do |post| %>
     <div><%= post.created_at %></div>
-    <div><%= post.body %></div>
+    <div><%= simple_format(post.body) %></div>
     <%= link_to "Delete", post, :method => 'delete', :confirm => true %>
     <hr >
 <% end %>

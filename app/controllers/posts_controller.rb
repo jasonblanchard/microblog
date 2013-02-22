@@ -2,6 +2,13 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.all(:order => "created_at DESC")
+        @post = Post.new
+
+        if session[:post]
+            @default_text = session[:post].body
+        else
+            @detault_text = ''
+        end
     end
 
     def new
@@ -9,9 +16,15 @@ class PostsController < ApplicationController
     end
 
     def create
-        @post = Post.create(params[:post])
-        
-        redirect_to posts_path
+        @post = Post.new(params[:post])
+
+        if @post.save
+            session.delete(:post)
+            redirect_to :root
+        else
+            redirect_to :root, :alert => "Your post is too long!"
+            session[:post] = @post
+        end
     end
 
     def destroy
