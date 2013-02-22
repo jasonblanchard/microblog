@@ -1,0 +1,11 @@
+<h1>Messages!</h2>
+<%= link_to "New Message", new_post_path %>
+<br />
+<br />
+
+<%= div_for @posts do |post| %>
+    <div><%= post.created_at %></div>
+    <div><%= post.body %></div>
+    <%= link_to "Delete", post, :method => 'delete', :confirm => true %>
+    <hr >
+<% end %>
