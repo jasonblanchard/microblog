@@ -1,8 +1,5 @@
 <%= form_for(@post) do |f| %>
     <div>
-        <%= f.label :body %>
-    </div>
-    <div>
         <%= f.text_area :body, :value => @default_text, :rows => 5 %>
     </div>
     <%= f.submit %>
