@@ -1,3 +1,3 @@
-<div><%= @post.created_at %></div>
+<div><%= link_to @post.created_at, @post %></div>
 <div><%= @post.body %></div>
 <%= link_to "Delete", @post, :method => 'delete', :confirm => true %>

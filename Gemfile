@@ -22,6 +22,12 @@ end
 
 gem 'jquery-rails'
 
+group :tests do
+     gem 'cucumber-rails', :require => false
+     gem 'database_cleaner'
+     gem "rspec-rails", "~> 2.0"
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
