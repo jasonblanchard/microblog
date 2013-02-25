@@ -15,3 +15,7 @@ Feature: View posts on the microblog
         Then I should see "This is a post"
         And I should see "Hello world!"
 
+    Scenario:
+        When I am on the show page for "Hello world!"
+        Then I should see "Hello world!"
+
