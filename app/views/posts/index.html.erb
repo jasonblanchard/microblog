@@ -8,8 +8,6 @@
 <br />
 
 <%= div_for @posts do |post| %>
-    <div><%= link_to post.created_at, post  %></div>
-    <div><%= simple_format(post.body) %></div>
-    <%= link_to "Delete", post, :method => 'delete', :confirm => true %>
+    <%= render "post", :@post => post %>
     <hr >
 <% end %>

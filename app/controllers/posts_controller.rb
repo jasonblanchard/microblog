@@ -4,8 +4,8 @@ class PostsController < ApplicationController
         @posts = Post.all(:order => "created_at DESC")
         @post = Post.new
 
-        if session[:post]
-            @default_text = session[:post].body
+        if flash[:post]
+            @default_text = flash[:post].body
         else
             @detault_text = ''
         end
@@ -24,11 +24,10 @@ class PostsController < ApplicationController
         @post = Post.new(params[:post])
 
         if @post.save
-            session.delete(:post)
             redirect_to :root
         else
             redirect_to :root, :alert => "Your post is too long!"
-            session[:post] = @post
+            flash[:post] = @post
         end
     end
 
