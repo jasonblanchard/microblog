@@ -3,4 +3,8 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
 
   validates :body, :length => { :maximum => 140 }
+
+  def has_comments?
+      comments.length > 0
+  end
 end

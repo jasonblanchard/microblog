@@ -11,4 +11,13 @@ class CommentsController < ApplicationController
     def new
         @post = Post.find(params[:id])
     end
+
+    def destroy
+        @comment = Comment.find(params[:id])
+        @post = @comment.post
+
+        @comment.destroy
+
+        redirect_to @post
+    end
 end
