@@ -18,7 +18,11 @@ When /^I am on the show page for "(.*?)"$/ do |arg1|
 end
 
 Given /^I fill in the "(.*?)" form with "(.*?)"$/ do |form, content|
-    fill_in form, :with => content
+    if form == 'comment_body'
+        find(:xpath, "(//textarea)[2]").set content
+    else
+        fill_in form, :with => content
+    end
 end
 
 Given /^I press "(.*?)"$/ do |arg1|
