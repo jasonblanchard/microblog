@@ -17,4 +17,12 @@ When /^I am on the show page for "(.*?)"$/ do |arg1|
     visit post_path(post)
 end
 
+Given /^I fill in the new post form with "(.*?)"$/ do |arg1|
+    fill_in 'post_body', :with => arg1
+end
+
+Given /^I press "(.*?)"$/ do |arg1|
+    click_button arg1
+end
+
 
