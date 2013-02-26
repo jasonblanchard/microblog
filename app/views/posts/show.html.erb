@@ -1,11 +1,4 @@
 <div class='post'>
     <%= render "post" %>
 </div>
-<hr>
-<%= div_for @post.comments do |comment| %>
-    <%= link_to "Delete", [comment.post, comment], :method => :delete %>
-    <%= comment.created_at %>-- <%= comment.body %>
-<% end %>
-
-<%= render 'comments/form' %>
 

@@ -6,6 +6,6 @@ Feature: Add post to microblog
 
     Scenario:
         Given I go to the home page
-        And I fill in the new post form with "Hello, cucumber!"
+        And I fill in the "post_body" form with "Hello, cucumber!"
         And I press "Create Post"
         Then I should see "Hello, cucumber!"

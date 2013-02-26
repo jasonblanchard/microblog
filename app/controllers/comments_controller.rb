@@ -3,9 +3,11 @@ class CommentsController < ApplicationController
         @post = Post.find(params[:post_id])
         @comment = @post.comments.new(params[:comment])
 
-        @comment.save
-
-        redirect_to @post
+        if @comment.save
+            redirect_to posts_path
+        else
+            redirect_to posts_path, :alert => "You gotta have a body!"
+        end
     end
 
     def new
@@ -18,6 +20,6 @@ class CommentsController < ApplicationController
 
         @comment.destroy
 
-        redirect_to @post
+        redirect_to posts_path, :alert => "Comment DESTROYED!"
     end
 end
