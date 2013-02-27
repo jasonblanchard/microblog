@@ -1,0 +1,2 @@
+$('#post_' + <%= params[:post_id] %>).append("<%= escape_javascript render(:file => 'comments/_form.html.erb') %>");
+$('#new-comment-link').hide();
