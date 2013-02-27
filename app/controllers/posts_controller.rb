@@ -22,11 +22,12 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(params[:post])
+        @posts = @posts = Post.all(:order => "created_at DESC")
 
         if @post.save
             redirect_to :root
         else
-            redirect_to :root, :alert => "Your post is too long!"
+            render action: "index"
             flash[:post] = @post
         end
     end
