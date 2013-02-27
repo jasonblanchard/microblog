@@ -1,10 +1,12 @@
 <div><%= link_to @post.created_at, @post %></div>
 <div><%= @post.body %></div>
-<%= link_to "Delete", @post, :method => 'delete', :confirm => true %>
-<hr>
+<div><%= link_to "Delete Post", @post, :method => 'delete', :confirm => true %></div>
+<br />
+<br />
+
 <%= div_for @post.comments do |comment| %>
     <%= link_to "Delete", [comment.post, comment], :method => :delete %>
     <%= comment.created_at %>-- <%= comment.body %>
 <% end %>
 
-<%= render 'comments/form' %>
+<%= link_to "Comment", new_post_comment_path(@post, :format => :js), :remote => true, :id => 'new-comment-link' %>

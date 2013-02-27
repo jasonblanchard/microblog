@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     end
 
     def new
-        @post = Post.find(params[:id])
+        @post = Post.find(params[:post_id])
     end
 
     def destroy
