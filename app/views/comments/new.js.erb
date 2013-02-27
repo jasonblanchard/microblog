@@ -1,2 +1,3 @@
 $('#post_' + <%= params[:post_id] %>).append("<%= escape_javascript render(:file => 'comments/_form.html.erb') %>");
+$('#new_comment').hide().slideDown('fast');
 $('#new-comment-link').hide();
