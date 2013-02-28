@@ -1,1 +1,20 @@
 @import "bootstrap";
+
+body {
+    background: rgb(20, 0, 24);
+    color: rgb(92, 77, 91);
+}
+
+a {
+    color: rgb(8, 92, 134);
+}
+
+a:hover {
+    color: rgb(93, 116, 128);
+    text-decoration: none;
+}
+
+hr {
+    border-top: none;
+    border-bottom: 1px solid rgb(61, 46, 60);
+}
