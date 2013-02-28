@@ -9,8 +9,8 @@
         </div>
     <% end %>
     <div>
-        <%= f.text_area :body, :value => @default_text, :rows => 5 %>
+        <%= f.text_area :body, :value => @default_text, :rows => 3, "placeholder" => "Enter post here..." %>
     </div>
-    <%= f.submit :class => 'btn' %>
+    <%= f.submit :class => 'btn btn-primary btn-block' %>
 <% end %>
 
