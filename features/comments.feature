@@ -19,9 +19,12 @@ Feature: Leave and view comments
         Then I should see "Great post!"
         And I should see "Stupid post"
 
+    @javascript
     Scenario:
         When I go to the home page
+        And I click on the "Comment" link
         And I fill in the "comment_body" form with "Lulz you cats"
+        And I press "Create Comment"
         Then I should see "Lulz you cats"
 
 

@@ -36,3 +36,9 @@ Given /^the following comments exist:$/ do |table|
         comment.save
     end
 end
+
+When /^I click on the "(.*?)" link$/ do |arg1|
+    if arg1 == "Comment"
+        find(:xpath, "(//a[contains(text(), 'Comment')])[1]").click
+    end
+end
