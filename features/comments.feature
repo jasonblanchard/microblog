@@ -28,3 +28,11 @@ Feature: Leave and view comments
         Then I should see "Lulz you cats"
 
 
+    Scenario:
+        When I go to the home page
+        And I click on the "Comment" link
+        And I fill in the non-javascript-ey "comment_body" form with "Lulz you cats"
+        And I press "Create Comment"
+        Then I should see "Lulz you cats"
+
+

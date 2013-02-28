@@ -12,6 +12,11 @@ class CommentsController < ApplicationController
 
     def new
         @post = Post.find(params[:post_id])
+
+        respond_to do |format|
+            format.html
+            format.js
+        end
     end
 
     def destroy
