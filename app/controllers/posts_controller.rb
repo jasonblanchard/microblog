@@ -26,12 +26,14 @@ class PostsController < ApplicationController
 
         if @post.save
             respond_to do |format|
-            format.html { redirect_to :root }
-            format.js
+                format.html { redirect_to :root }
+                format.js
             end
         else
-            render action: "index"
-            flash[:post] = @post
+            respond_to do |format|
+                format.html { render action: "index"; flash[:post] = @post }
+                format.js { render 'fail_create.js.erb'; flash.now[:alert] = "Your post didn't post!" }
+            end
         end
     end
 

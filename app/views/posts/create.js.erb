@@ -1,2 +1,2 @@
-$('.post-list').before("<div id='post_<%= @post.id %>'><hr><%= escape_javascript(render(@post)) %></div>").fadeIn('fast');
+$("<div id='post_<%= @post.id %>'><hr><%= escape_javascript(render(@post)) %></div>").insertBefore('.post-list').hide().fadeIn('fast');
 $('#new_post')[0].reset();
