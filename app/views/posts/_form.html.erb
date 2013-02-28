@@ -1,13 +1,6 @@
 <%= form_for(@post, :remote => true) do |f| %>
-    <% if @post.errors.any? %>
-        <div id="error-explanation" class="alert">
-            <ul>
-            <% @post.errors.full_messages.each do |error| %>
-                <li><%= error %></li>
-            <% end %>
-        </ul>
-        </div>
-    <% end %>
+    <div class="form-errors">
+        <%= render 'form_errors' %>
     <div>
         <%= f.text_area :body, :value => @default_text, :rows => 3, "placeholder" => "Enter post here..." %>
     </div>
