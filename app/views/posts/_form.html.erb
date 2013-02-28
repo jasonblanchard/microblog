@@ -1,6 +1,7 @@
 <%= form_for(@post, :remote => true) do |f| %>
     <div class="form-errors">
         <%= render 'form_errors' %>
+    </div>
     <div>
         <%= f.text_area :body, :value => @default_text, :rows => 3, "placeholder" => "Enter post here..." %>
     </div>
