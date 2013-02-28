@@ -44,5 +44,5 @@ When /^I click on the "(.*?)" link$/ do |arg1|
 end
 
 When /^I fill in the non\-javascript\-ey "(.*?)" form with "(.*?)"$/ do |arg1, arg2|
-    fill_in arg1, :with => arg2
+    pending
 end
