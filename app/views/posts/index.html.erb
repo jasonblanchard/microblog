@@ -3,7 +3,9 @@
 <br />
 <br />
 
-<%= div_for @posts do |post| %>
-    <hr>
-    <%= render "post", :@post => post %>
-<% end %>
+<div class="post-list">
+    <%= div_for @posts do |post| %>
+        <hr>
+        <%= render "post", :@post => post %>
+    <% end %>
+</div>

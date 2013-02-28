@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, :remote => true) do |f| %>
     <% if @post.errors.any? %>
         <div id="error-explanation" class="alert">
             <ul>
@@ -11,6 +11,6 @@
     <div>
         <%= f.text_area :body, :value => @default_text, :rows => 5 %>
     </div>
-    <%= f.submit %>
+    <%= f.submit :class => 'btn' %>
 <% end %>
 

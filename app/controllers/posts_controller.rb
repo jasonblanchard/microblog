@@ -25,7 +25,10 @@ class PostsController < ApplicationController
         @posts = @posts = Post.all(:order => "created_at DESC")
 
         if @post.save
-            redirect_to :root
+            respond_to do |format|
+            format.html { redirect_to :root }
+            format.js
+            end
         else
             render action: "index"
             flash[:post] = @post
